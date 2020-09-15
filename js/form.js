@@ -14,6 +14,7 @@ botaoAdicionar.addEventListener("click", function(){
 
     tabela.appendChild(pacienteTr);
 
+    form.reset();
 
 });
 
