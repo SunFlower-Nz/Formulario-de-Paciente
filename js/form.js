@@ -34,12 +34,15 @@ function montaTr(paciente){
     pacienteTr.classList.add("paciente");
 
     var nomeTd = document.createElement("td");
+    nomeTd.classList.add("info-nome");
+    nomeTd.textContent = paciente.nome;
+
     var pesoTd = document.createElement("td");
     var alturaTd = document.createElement("td");
     var gorduraTd = document.createElement("td");
     var imcTd = document.createElement("td");
 
-    nomeTd.textContent = paciente.nome;
+    
     pesoTd.textContent = paciente.peso;
     alturaTd.textContent = paciente.altura;
     gorduraTd.textContent = paciente.gordura;
