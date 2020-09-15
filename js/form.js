@@ -7,7 +7,7 @@ botaoAdicionar.addEventListener("click", function(){
     var paciente = obtemPacienteDoFormulario(form);
 
     // Cria a tr a td do paciente
-    
+    montaTr();
 
     // adicionando o paciente da tabela
     var tabela = document.querySelector("#tabela-pacientes");
@@ -39,12 +39,12 @@ function montaTr(paciente){
     var alturaTd = document.createElement("td");
     var gorduraTd = document.createElement("td");
     var imcTd = document.createElement("td");
-    imcTd.textContent = calculaImc(peso,altura);
 
     nomeTd.textContent = paciente.nome;
     pesoTd.textContent = paciente.peso;
     alturaTd.textContent = paciente.altura;
     gorduraTd.textContent = paciente.gordura;
+    imcTd.textContent = paciente.imc;
     
     pacienteTr.appendChild(nomeTd);
     pacienteTr.appendChild(pesoTd);
