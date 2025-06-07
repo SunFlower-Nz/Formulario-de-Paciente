@@ -18,21 +18,6 @@ Este é um projeto de uma aplicação web interativa para gerenciar pacientes de
 * **CSS3**: Para a estilização, responsividade e animações.
 * **JavaScript**: Para toda a lógica de manipulação do DOM, interatividade, validações e comunicação com API.
 
-## 📂 Estrutura do Projeto
-
-O código-fonte está organizado da seguinte forma:
-
-├── css/
-│   ├── index.css         # Estilos principais da aplicação
-│   └── reset.css         # Reset de estilos padrão do navegador
-├── js/
-│   ├── buscar-pacientes.js # Lógica para buscar pacientes de uma API
-│   ├── calcula-imc.js      # Funções para o cálculo do IMC
-│   ├── filtra.js           # Lógica do filtro de busca na tabela
-│   ├── form.js             # Lógica do formulário de adição de pacientes
-│   └── remover-paciente.js # Lógica para remover um paciente da tabela
-└── index.html              # Arquivo principal da aplicação
-
 ## 🏁 Como Executar
 
 Para executar este projeto, basta seguir os passos abaixo:
