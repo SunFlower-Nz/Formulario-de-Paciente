@@ -1,12 +1,30 @@
-var paciente = document.querySelectorAll(".paciente");
+var tabela = document.querySelector("#tabela-pacientes");
 
-var tabela = document.querySelector("table");
+tabela.addEventListener("click", function(event) {
+    // Verifica se o elemento clicado é o botão de remover
+    if (event.target.classList.contains('botao-remover')) {
+        var pacienteTr = event.target.parentNode.parentNode; // O <tr> do paciente
 
-tabela.addEventListener("dblclick", function(event){
+        pacienteTr.classList.add("fadeOut");
 
-    event.target.parentNode.classList.add("fadeOut");
+        // Remove do localStorage
+        let nomePacienteRemover = pacienteTr.querySelector(".info-nome").textContent;
+        let pacientes = getPacientesFromStorage();
+        let pacientesAtualizados = pacientes.filter(p => p.nome !== nomePacienteRemover);
+        savePacientesToStorage(pacientesAtualizados);
 
-    setTimeout(function(){
-        event.target.parentNode.remove();
-    }, 250);
+        setTimeout(function() {
+            pacienteTr.remove();
+        }, 500); // Sincroniza com a animação CSS
+    }
 });
+
+
+// Funções de storage (idealmente estariam em um arquivo 'storage.js' para não duplicar)
+function getPacientesFromStorage() {
+    return JSON.parse(localStorage.getItem("pacientes") || "[]");
+}
+
+function savePacientesToStorage(pacientes) {
+    localStorage.setItem("pacientes", JSON.stringify(pacientes));
+}
